@@ -1,6 +1,7 @@
 import Layout from '../../components/Layout'
 import CartList from '../../components/CartList'
-import product from '../../types/product'import cart from '../../types/cart'
+import product from '../../types/product'
+import cart from '../../types/cart'
 import { loadStripe } from '@stripe/stripe-js'
 import { getLambdaResult } from '../api/lib/lambda'
 import { GetServerSideProps } from 'next'
