@@ -1,7 +1,6 @@
 import Layout from '../../components/Layout'
 import CartList from '../../components/CartList'
-// import product from '../../types/product'
-// import cart from '../../types/cart'
+import product from '../../types/product'import cart from '../../types/cart'
 import { loadStripe } from '@stripe/stripe-js'
 import { getLambdaResult } from '../api/lib/lambda'
 import { GetServerSideProps } from 'next'
@@ -18,7 +17,7 @@ const carteg: cart = { ID: 100, total: 1000, products: alltheprods }
 
 export default function Cart ({ record }) {
   const [session, loading] = useSession()
-  const handleClick = async (event) => {
+  /* const handleClick = async (event) => {
     // Get Stripe.js instance
     const stripe = await stripePromise
     // Call your backend to create the Checkout Session
@@ -34,7 +33,7 @@ export default function Cart ({ record }) {
     const { error } = await stripe.redirectToCheckout({
       sessionId
     })
-  }
+  } */
   return (
     <Layout title="Cart page">
     {!session && (
@@ -42,8 +41,8 @@ export default function Cart ({ record }) {
     )
 }
       {session && (<div><CartList cart={carteg} />
-        <br />
-        <button className="goToCheckout" onClick={handleClick}>Checkout</button></div>)}
+        {/* <br />
+        <button className="goToCheckout" onClick={handleClick}>Checkout</button> */}</div>)}
     </Layout>
   )
 }
